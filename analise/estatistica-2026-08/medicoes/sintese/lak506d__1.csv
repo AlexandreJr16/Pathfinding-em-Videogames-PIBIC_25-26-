@@ -1,0 +1,1 @@
+lak506d,1,80,100,10876970.282,"(abs (+ (+ (* (sqr 2.3) (+ (* (sqr 7.3) (max deltaY deltaX)) (+ deltaY (sqr deltaX)))) (* (sqr (neg 7.3)) deltaY)) 7.3))",2.246843,23,8

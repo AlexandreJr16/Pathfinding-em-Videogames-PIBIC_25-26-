@@ -1,0 +1,4 @@
+arena Stochastic 0.3 n=100 difs=182283/205400 delta_fresco=1.35785 delta_congelado=4.25686
+arena2 Stochastic 0.3 n=100 difs=2402503/2431100 delta_fresco=1.9289 delta_congelado=12.0794
+brc000d Stochastic 0.3 n=100 difs=2705664/2738600 delta_fresco=2.05035 delta_congelado=19.7009
+brc100d Stochastic 0.3 n=20 difs=617872/620460 delta_fresco=2.79807 delta_congelado=5.90325

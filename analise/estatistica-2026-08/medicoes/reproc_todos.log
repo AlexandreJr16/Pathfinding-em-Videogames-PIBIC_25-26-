@@ -1,0 +1,34 @@
+### arena
+arena Stochastic 0.3 n=100 difs=186583/205400 delta_fresco=1.2402 delta_congelado=5.30735
+### arena2
+arena2 Stochastic 0.3 n=100 difs=2406982/2431100 delta_fresco=1.81727 delta_congelado=13.376
+### brc000d
+brc000d Stochastic 0.3 n=100 difs=2700991/2738600 delta_fresco=1.84457 delta_congelado=20.6415
+### brc100d
+brc100d Stochastic 0.3 n=100 difs=3085589/3102300 delta_fresco=2.05533 delta_congelado=10.3591
+### brc101d
+brc101d Stochastic 0.3 n=100 difs=2966497/2988200 delta_fresco=1.76774 delta_congelado=7.5129
+### brc201d
+brc201d Stochastic 0.3 n=100 difs=2088844/2106600 delta_fresco=2.10669 delta_congelado=9.36924
+### brc202d
+brc202d Stochastic 0.3 n=100 difs=4302770/4315100 delta_fresco=2.31454 delta_congelado=9.28993
+### brc203d
+brc203d Stochastic 0.3 n=100 difs=2059123/2071200 delta_fresco=2.51133 delta_congelado=6.39553
+### den000d
+den000d Stochastic 0.3 n=100 difs=5779176/5808500 delta_fresco=2.16228 delta_congelado=17.215
+### den005d
+den005d Stochastic 0.3 n=100 difs=1747361/1755900 delta_fresco=1.76416 delta_congelado=7.17471
+### den011d
+den011d Stochastic 0.3 n=100 difs=1439667/1450600 delta_fresco=2.13869 delta_congelado=5.81407
+### den012d
+den012d Stochastic 0.3 n=100 difs=2248002/2268200 delta_fresco=2.22535 delta_congelado=18.658
+### den500d
+den500d Stochastic 0.3 n=100 difs=2992591/3007200 delta_fresco=2.40914 delta_congelado=9.88536
+### den501d
+den501d Stochastic 0.3 n=100 difs=2635760/2645300 delta_fresco=3.12942 delta_congelado=7.50805
+### den602d
+den602d Stochastic 0.3 n=100 difs=3451757/3461700 delta_fresco=2.80782 delta_congelado=7.1415
+### hrt201n
+hrt201n Stochastic 0.3 n=100 difs=2357436/2365200 delta_fresco=2.72011 delta_congelado=7.84399
+### lak506d
+lak506d Stochastic 0.3 n=100 difs=1380160/1389400 delta_fresco=2.09343 delta_congelado=5.1595

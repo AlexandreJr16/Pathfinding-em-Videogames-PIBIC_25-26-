@@ -1,0 +1,18 @@
+arena: 130 instancias em 0.00955434 s
+arena2: 910 instancias em 1.25054 s
+brc000d: 850 instancias em 1.11726 s
+brc100d: 1360 instancias em 3.26707 s
+brc101d: 1570 instancias em 3.7094 s
+brc201d: 2090 instancias em 2.96207 s
+brc202d: 2550 instancias em 7.65742 s
+brc203d: 1290 instancias em 1.57063 s
+den000d: 1310 instancias em 4.34252 s
+den005d: 1500 instancias em 1.29587 s
+den011d: 750 instancias em 0.44519 s
+den012d: 1180 instancias em 1.3832 s
+den500d: 1600 instancias em 2.56712 s
+den501d: 1170 instancias em 1.56016 s
+den602d: 2660 instancias em 7.28939 s
+hrt201n: 1180 instancias em 1.3742 s
+lak506d: 1110 instancias em 0.592043 s
+>>> dijkstra.csv pronto

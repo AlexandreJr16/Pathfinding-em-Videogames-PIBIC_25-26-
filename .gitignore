@@ -1,0 +1,51 @@
+# --- Binários e artefatos de compilação -------------------------------------
+bin/
+*.o
+*.so
+*.a
+*.exe
+# Os cinco programas de medição, compilados em codigo/medicoes-2026-08/
+codigo/medicoes-2026-08/medir_dijkstra
+codigo/medicoes-2026-08/medir_pivos
+codigo/medicoes-2026-08/verifica_reprocessamento
+codigo/medicoes-2026-08/sintese_repetida
+codigo/medicoes-2026-08/sintese_worker
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- Saída do experimento ----------------------------------------------------
+# Gerados na raiz por bin/pathfinding-*; os dados de referência ficam no Drive
+# (ver dados/MANIFESTO.md). NÃO versionar: são ~170 MB e mudam a cada execução.
+/resultados_base.csv
+/resultados_ratio.csv
+/resultados_robustez.csv
+/resultados_sintese.csv
+*.db
+
+# --- Dados brutos baixados do Drive ------------------------------------------
+dados/brutos/
+
+# --- Estado intermediário da re-síntese do A9 --------------------------------
+*.ckpt
+*.lock
+# Exceção: os checkpoints das 71 sínteses interrompidas por prazo são preservados
+# de propósito, para quem um dia quiser completá-las (ver ANALISE_RETOMAR.md).
+!analise/estatistica-2026-08/medicoes/sintese/_incompletos_backup/*
+
+# --- Ferramental de assistentes de IA ----------------------------------------
+.claude/
+.specify/
+.gemini/
+.openspec/
+
+# --- Sistema -----------------------------------------------------------------
+.idea/
+.vscode/
+.DS_Store
+*.log
+# Exceção: os logs das medições de agosto são registro de execução, não lixo.
+!analise/estatistica-2026-08/medicoes/*.log

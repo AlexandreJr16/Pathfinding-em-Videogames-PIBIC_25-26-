@@ -1,0 +1,269 @@
+<title>Correções do main.tex</title>
+<style>
+:root{
+  --ground:#F7F8FA; --panel:#FFFFFF; --ink:#191C22; --ink-2:#4A5160; --ink-3:#767E8E;
+  --rule:#DDE1E8; --rule-2:#EDF0F4;
+  --accent:#1E3A6E; --accent-soft:#E8EDF6;
+  --confirma:#1F6B4E; --confirma-bg:#E7F2EC;
+  --corrige:#8A5507; --corrige-bg:#FAF0DF;
+  --contradiz:#98282B; --contradiz-bg:#FAEAEA;
+  --serif:Georgia,"Iowan Old Style","Liberation Serif","DejaVu Serif",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Cantarell,"Helvetica Neue",sans-serif;
+  --mono:ui-monospace,"JetBrains Mono","DejaVu Sans Mono",SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#101318; --panel:#171B22; --ink:#E7E9EE; --ink-2:#AEB6C4; --ink-3:#7E8798;
+  --rule:#2A303B; --rule-2:#1E242D;
+  --accent:#8FB2E8; --accent-soft:#1A2333;
+  --confirma:#6FC79C; --confirma-bg:#14251E;
+  --corrige:#D9A441; --corrige-bg:#2A2113;
+  --contradiz:#E28A8C; --contradiz-bg:#2B1719;
+}}
+:root[data-theme="dark"]{
+  --ground:#101318; --panel:#171B22; --ink:#E7E9EE; --ink-2:#AEB6C4; --ink-3:#7E8798;
+  --rule:#2A303B; --rule-2:#1E242D;
+  --accent:#8FB2E8; --accent-soft:#1A2333;
+  --confirma:#6FC79C; --confirma-bg:#14251E;
+  --corrige:#D9A441; --corrige-bg:#2A2113;
+  --contradiz:#E28A8C; --contradiz-bg:#2B1719;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:960px; margin:0 auto; padding:0 24px 96px}
+.prose{max-width:68ch}
+
+/* cabeçalho: a textura é a grade 4-conectada dos mapas do Moving AI */
+header.top{
+  border-bottom:1px solid var(--rule); margin-bottom:44px;
+  background-image:
+    linear-gradient(to right,var(--rule-2) 1px,transparent 1px),
+    linear-gradient(to bottom,var(--rule-2) 1px,transparent 1px);
+  background-size:22px 22px; background-position:center bottom;
+}
+header.top .wrap{padding-top:56px; padding-bottom:40px}
+.eyebrow{
+  font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--ink-3); margin:0 0 14px;
+}
+h1{
+  font-family:var(--serif); font-weight:600; font-size:clamp(30px,5.2vw,46px);
+  line-height:1.12; letter-spacing:-.015em; margin:0 0 16px; text-wrap:balance;
+}
+.lede{font-size:18px; line-height:1.55; color:var(--ink-2); margin:0; max-width:60ch}
+.meta{
+  display:flex; flex-wrap:wrap; gap:8px 26px; margin-top:28px;
+  font-family:var(--mono); font-size:12px; color:var(--ink-3);
+}
+.meta b{color:var(--ink-2); font-weight:500}
+
+h2{
+  font-family:var(--serif); font-weight:600; font-size:26px; line-height:1.2;
+  letter-spacing:-.01em; margin:64px 0 6px; text-wrap:balance;
+}
+h2 + .sub{color:var(--ink-3); font-size:14px; margin:0 0 26px; max-width:64ch}
+h3{font-family:var(--serif); font-weight:600; font-size:19px; margin:0 0 10px; line-height:1.3}
+p{margin:0 0 14px}
+a{color:var(--accent)}
+code,.mono{font-family:var(--mono); font-size:.88em}
+code{background:var(--rule-2); padding:.12em .38em; border-radius:3px; color:var(--ink-2)}
+strong{font-weight:640; color:var(--ink)}
+
+/* o par reportado -> corrigido: o elemento estrutural que a auditoria produz */
+.swap{display:inline-flex; align-items:baseline; gap:9px; font-variant-numeric:tabular-nums; white-space:nowrap}
+.swap .was{color:var(--ink-3); text-decoration:line-through; text-decoration-thickness:1px; font-family:var(--mono); font-size:.92em}
+.swap .arrow{color:var(--ink-3); font-size:.8em}
+.swap .now{font-family:var(--mono); font-weight:640; color:var(--ink)}
+
+.chip{
+  display:inline-block; font-family:var(--mono); font-size:10.5px; font-weight:600;
+  letter-spacing:.08em; text-transform:uppercase; padding:3px 8px; border-radius:3px;
+  white-space:nowrap; vertical-align:2px;
+}
+.c-confirma{background:var(--confirma-bg); color:var(--confirma)}
+.c-corrige{background:var(--corrige-bg); color:var(--corrige)}
+.c-contradiz{background:var(--contradiz-bg); color:var(--contradiz)}
+.c-neutro{background:var(--rule-2); color:var(--ink-3)}
+
+.callout{
+  border-left:3px solid var(--accent); background:var(--accent-soft);
+  padding:18px 22px; border-radius:0 5px 5px 0; margin:0 0 12px;
+}
+.callout p:last-child{margin-bottom:0}
+
+.tabela{overflow-x:auto; margin:22px 0; border:1px solid var(--rule); border-radius:6px; background:var(--panel)}
+table{border-collapse:collapse; width:100%; font-size:14px}
+th,td{padding:10px 14px; text-align:left; border-bottom:1px solid var(--rule-2)}
+thead th{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:600; border-bottom:1px solid var(--rule); white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap}
+td.id{font-family:var(--mono); font-weight:640; color:var(--accent); white-space:nowrap}
+tr.total td{border-top:1px solid var(--rule); color:var(--ink-3); font-style:italic}
+
+/* os três achados que mudam o texto: faixa de severidade + painel */
+.caso{
+  background:var(--panel); border:1px solid var(--rule); border-left:4px solid var(--sev);
+  border-radius:0 6px 6px 0; padding:24px 26px; margin:0 0 18px;
+}
+.caso.contradiz{--sev:var(--contradiz)}
+.caso.corrige{--sev:var(--corrige)}
+.caso-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:12px; margin-bottom:12px}
+.caso-id{font-family:var(--mono); font-size:13px; font-weight:700; color:var(--sev)}
+.caso h3{margin:0; flex:1 1 320px}
+.frase{
+  font-family:var(--serif); font-size:16.5px; line-height:1.55; color:var(--ink-2);
+  border-top:1px solid var(--rule-2); margin-top:16px; padding-top:16px;
+}
+.frase::before{
+  content:"frase para o relatório"; display:block; font-family:var(--mono);
+  font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-3); margin-bottom:7px;
+}
+
+.grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px}
+.card{background:var(--panel); border:1px solid var(--rule); border-radius:6px; padding:20px 22px}
+.card h3{font-size:17px; display:flex; gap:10px; align-items:baseline; flex-wrap:wrap}
+.card .kid{font-family:var(--mono); font-size:12px; color:var(--accent); font-weight:700}
+.card p{font-size:14.5px; margin-bottom:10px; color:var(--ink-2)}
+.card p:last-child{margin-bottom:0}
+.card strong{color:var(--ink)}
+
+figure{margin:0 0 8px; background:var(--panel); border:1px solid var(--rule); border-radius:6px; padding:20px}
+figure img{display:block; width:100%; max-width:100%; height:auto}
+figcaption{font-size:13.5px; color:var(--ink-2); margin-top:14px; padding-top:13px; border-top:1px solid var(--rule-2)}
+figcaption b{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); display:block; margin-bottom:5px; font-weight:600}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) figure img{filter:invert(1) hue-rotate(180deg)}}
+:root[data-theme="dark"] figure img{filter:invert(1) hue-rotate(180deg)}
+
+ul.lista{margin:0 0 14px; padding-left:20px}
+ul.lista li{margin-bottom:7px; color:var(--ink-2)}
+ul.lista li strong{color:var(--ink)}
+footer{margin-top:72px; padding-top:24px; border-top:1px solid var(--rule); color:var(--ink-3); font-size:13.5px}
+
+.wrap{max-width:860px}
+h2{border-top:1px solid var(--rule); padding-top:26px; margin-top:52px}
+h2:first-of-type{border-top:0}
+.verdicts{display:flex; gap:8px; flex-wrap:wrap; margin:-2px 0 18px}
+blockquote{margin:16px 0; padding:14px 20px; border-left:3px solid var(--corrige);
+  background:var(--corrige-bg); border-radius:0 5px 5px 0; color:var(--ink-2); font-size:15px}
+blockquote p:last-child{margin-bottom:0}
+.sugerida{border-left:3px solid var(--accent); background:var(--accent-soft);
+  padding:16px 20px; border-radius:0 5px 5px 0; margin:16px 0;
+  font-family:var(--serif); font-size:16px; line-height:1.55; color:var(--ink-2)}
+.sugerida::before{content:"redação sugerida"; display:block; font-family:var(--mono);
+  font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3);
+  margin-bottom:8px; font-weight:600}
+hr{border:0; border-top:1px solid var(--rule); margin:42px 0}
+ul.lista li code, p code{white-space:nowrap}
+.aviso{background:var(--panel); border:1px solid var(--rule); border-radius:6px;
+  padding:22px 24px; margin:0 0 16px}
+</style>
+<header class="top"><div class="wrap">
+  <p class="eyebrow">Companheiro da auditoria estatística · PIBIC 25-26</p>
+  <h1>Dez trechos do relatório a corrigir, com a redação pronta</h1>
+  <p class="lede">Cada item traz o que o texto diz hoje, o que os dados dizem e uma
+  redação sugerida, com o número de linha do <code>main.tex</code>. Ordem: do mais grave
+  para o menos.</p>
+  <div class="meta">
+    <span><b>3</b> contradizem o texto</span>
+    <span><b>4</b> corrigem números</span>
+    <span><b>3</b> confirmam e acrescentam</span>
+  </div>
+</div></header>
+<div class="wrap">
+<p>Referências de linha são do <code>main.tex</code> em <code>/home/alejr/RelatorioFinal_Modelo_AlexandrePereira_PIBIC_2025_2026/</code>. Cada item traz o que o texto diz hoje, o que os dados dizem e uma redação sugerida. Ordem: do mais grave para o menos.</p>
+<hr>
+<h2>Antes de começar: duas armadilhas de leitura</h2>
+<p><strong>1. Existem DUAS monotonias, e elas têm destinos opostos.</strong> Os nomes são parecidos e trocá-las na redação inverte o sentido do texto:</p>
+<div class="tabela"><table><thead><tr><th></th><th>o que é</th><th>onde aparece</th><th>destino</th></tr></thead><tbody><tr><td><strong>monotonia dos speedups estáticos</strong></td><td>4,70 &lt; 5,94 &lt; 7,32 &lt; 7,87 (razão vs Manhattan, por nº de pivôs)</td><td>C4</td><td><strong>restaurada</strong> pela correção — e é ela que apaga o parágrafo dos "50 pivôs anômalos" de <code>main.tex:619</code></td></tr><tr><td><strong>monotonia dos fatores de degradação</strong></td><td>δ₁₀ &gt; δ₂₀ &gt; δ₅₀ &gt; δ₁₀₀, nos cinco padrões</td><td>C3c</td><td><strong>confirmada</strong> — o parágrafo de <code>main.tex:685</code> fica como está</td></tr></tbody></table></div>
+<p>Regra prática: se a frase fala de <em>quanto a heurística economiza no mapa intacto</em>, é a primeira. Se fala de <em>quanto ela piora quando o mapa muda</em>, é a segunda.</p>
+<p><strong>2. No C5, o p do teste binomial é alto de propósito.</strong> p = 0,241 significa que a taxa de colapsos observada <strong>não se distingue</strong> da prevista pelo modelo geométrico — é o modelo passando no teste, não falhando. A leitura errada ("p &gt; 0,05, logo não é significativo") é fácil de fazer e vai aparecer em arguição. A resposta pronta: <em>"a hipótese nula aqui é o próprio mecanismo proposto; um p baixo é que refutaria a explicação geométrica."</em> Se preferir evitar a discussão, o argumento se sustenta sem o teste — 7 colapsos previstos, 7 observados, exatamente nas mesmas 7 células, e zero nos 15 mapas 100% conexos.</p>
+<hr>
+<h2>C1 — §4.3 e Fig. 6: "sem reprocessamento das heurísticas" é falso para a memória</h2>
+<p><strong>Onde:</strong> <code>main.tex:534</code> (Padrões de Degradação) e <code>main.tex:695</code> (legenda da Fig. 6). <strong>Hoje:</strong> "os bloqueios são aplicados cumulativamente [...] <strong>sem reprocessamento das heurísticas após as modificações</strong>."</p>
+<p><strong>O que o código faz:</strong> <code>main.cpp:227</code> troca o grid pelo degradado e <code>main.cpp:244</code> chama <code>computarDistPivosFixos(pivosPorN[n])</code>, que executa <code>bfsPivo</code> (<code>heuristics.cpp</code>) sobre o grid <strong>já degradado</strong>. Só as <em>posições</em> dos pivôs ficam congeladas. Medição direta (<code>medicoes/reprocessamento.csv</code>, 17 mapas, semente 42): <strong>93,4% das distâncias pré-computadas mudam</strong> entre o mapa original e o degradado (mediana; intervalo interquartil 81,9%–98,0%, e em 97% das medições a mudança passa de metade das células). A média por padrão e nível vai de 59,5% (radial a 10%) a 99,3% (linear a 30%), e <strong>87,5% das células tornam-se inalcançáveis a partir do pivô</strong> (mediana). As 6 medições em que nada muda são todas de <code>brc201d</code>, onde os pivôs colapsados do C5 ficaram num bolsão que a degradação nunca alcançou — corroboração independente daquele mecanismo.</p>
+<blockquote><p>Estes números são da semente 42. A extensão às outras quatro está em execução (~50 min) e deve mexer apenas na terceira casa; a conclusão qualitativa — o reprocessamento é total — não depende de semente, porque decorre do próprio código.</p></blockquote>
+<div class="sugerida">"Os bloqueios são aplicados cumulativamente nos níveis de 10%, 20% e 30% das células livres. As posições dos pivôs são mantidas fixas, mas as distâncias a partir deles são recalculadas sobre o mapa modificado; as heurísticas de Manhattan e de fórmula não requerem reprocessamento algum. A comparação de robustez, portanto, concede à heurística de memória uma atualização completa de suas tabelas — e o resultado da Seção 5.4 deve ser lido como um limite <em>superior</em> para a robustez dessa estratégia."</div>
+<p><strong>Consequência positiva:</strong> a tese fica mais forte, não mais fraca. A fórmula supera a memória em todos os cinco padrões (ver C3) <strong>mesmo dando à memória um BFS completo de graça</strong>.</p>
+<hr>
+<h2>C2 — §5.4: o mecanismo narrado está invertido</h2>
+<p><strong>Onde:</strong> <code>main.tex:685</code>. <strong>Hoje:</strong> "a memória --- guiada por <strong>distâncias que descrevem um mapa que já não existe</strong></p>
+<hr>
+<p><strong>Problema:</strong> as distâncias descrevem exatamente o mapa que existe (C1). A explicação correta é outra e está medida: ao recalcular a BFS num mapa fragmentado, parte dos pivôs fica <strong>inalcançável</strong> a partir da origem ou do destino; <code>heuristicaMemoryBased</code> (<code>heuristics.cpp</code>) pula esses pivôs (<code>if (dS != -1 &amp;&amp; dG != -1)</code>), e a estimativa colapsa em direção a zero. Quanto mais o mapa fragmenta, menos pivôs contribuem.</p>
+<p><strong>Evidência:</strong> em <code>medicoes/reprocessamento_expansoes.csv</code> o efeito <strong>troca de sinal</strong> por padrão. Em den501d, 30% de bloqueio: sob padrão linear, distâncias <em>congeladas</em> dariam δ = 1,55 contra δ = 3,00 das recalculadas (a atualização <strong>piora</strong>); sob estocástico, o inverso (δ = 7,51 congelado contra 3,13 recalculado).</p>
+<hr>
+<h2>C3 — §5.4 e resumo: fatores de degradação (média aritmética de razões)</h2>
+<p><strong>Onde:</strong> <code>main.tex:130</code> (resumo), <code>main.tex:681</code>, <code>main.tex:683</code>. <strong>Hoje:</strong> δ_max de 2,54 (fórmula), 3,26 (memória-100), 4,25 (Manhattan), 6,33 (memória-10).</p>
+<p>Os quatro números <strong>reproduzem exatamente</strong>, mas vêm de média aritmética de razões sobre instâncias agrupadas, sem normalizar por mapa (E1, E2). Corrigidos para média geométrica, com a duplicata de <code>arena</code> removida e peso igual por mapa:</p>
+<div class="tabela"><table><thead><tr><th>estratégia</th><th>δ_max reportado</th><th>δ_max corrigido</th><th>pior padrão</th></tr></thead><tbody><tr><td>Fórmula</td><td>2,54</td><td><strong>1,77</strong></td><td>Estocástico</td></tr><tr><td>Memória-100</td><td>3,26</td><td><strong>2,30</strong></td><td>Linear</td></tr><tr><td>Manhattan</td><td>4,25</td><td><strong>2,51</strong></td><td>Estocástico</td></tr><tr><td>Memória-10</td><td>6,33</td><td><strong>3,43</strong></td><td>Orgânico</td></tr></tbody></table></div>
+<p><strong>A ordem se preserva</strong> — a conclusão qualitativa do trabalho sobrevive. Mas:</p>
+<p><strong>C3b — <code>main.tex:683</code> está contradito.</strong> O texto afirma que "nos padrões radial e esparso [...] a memória com 100 pivôs é a mais robusta (1,18 e 1,44), seguida de perto pela fórmula (1,56 e 1,49)". Com a agregação corrigida, <strong>a fórmula é a mais robusta nos cinco padrões</strong> (radial 1,09 contra 1,11; esparso 1,19 contra 1,26). Trocar por: "a fórmula é a estratégia menos degradada em todos os cinco padrões, com vantagem estreita sobre a memória de 100 pivôs nos padrões espacialmente concentrados (radial e esparso) e ampla nos demais."</p>
+<p><strong>C3c — <code>main.tex:685</code> CONFIRMA.</strong> A monotonia δ₁₀ &gt; δ₂₀ &gt; δ₅₀ &gt; δ₁₀₀ vale em todos os cinco padrões também na agregação corrigida. Manter.</p>
+<hr>
+<h2>C4 — Tabela 4 (§5.1): as linhas de memória vêm de outra população</h2>
+<p><strong>Onde:</strong> <code>main.tex:598-619</code>.</p>
+<p><code>analise.py:120-134</code> monta as linhas de memória a partir de <code>resultados_robustez.csv</code>, enquanto Manhattan e Fórmula vêm de <code>resultados_base.csv</code>. A robustez contém apenas as <strong>23.906 instâncias (20,5%)</strong> que sobreviveram ao filtro de conectividade em 30% de bloqueio — sistematicamente os pares mais curtos. Sobre esses mesmos pares, o <strong>próprio Manhattan expande 2.148,79 nós, não 7.472,95</strong>. O speedup de 51,98× divide o Manhattan de uma população pelo memória de outra.</p>
+<p>Recalculado sobre as mesmas instâncias, pareado por par origem-destino, com média geométrica e peso igual por mapa (IC 95% BCa sobre os 17 mapas):</p>
+<div class="tabela"><table><thead><tr><th>configuração</th><th>razão reportada</th><th>razão corrigida</th><th>IC 95%</th></tr></thead><tbody><tr><td>Fórmula</td><td>3,10×</td><td><strong>2,80×</strong></td><td>[2,32; 3,30]</td></tr><tr><td>Memória-10</td><td>17,25×</td><td><strong>4,70×</strong></td><td>[3,30; 5,43]</td></tr><tr><td>Memória-20</td><td>30,78×</td><td><strong>5,94×</strong></td><td>[3,94; 6,95]</td></tr><tr><td>Memória-50</td><td>33,50×</td><td><strong>7,32×</strong></td><td>[4,64; 8,69]</td></tr><tr><td>Memória-100</td><td>51,98×</td><td><strong>7,87×</strong></td><td>[4,92; 9,39]</td></tr></tbody></table></div>
+<p><strong>Efeito colateral:</strong> a hierarquia passa a ser monotônica no número de pivôs (4,70 &lt; 5,94 &lt; 7,32 &lt; 7,87). <strong>O "comportamento não monotônico" de <code>main.tex:619</code> some</strong> — era artefato da mistura de populações e das células degeneradas (C5). O parágrafo inteiro que explica a não monotonia deve sair.</p>
+<hr>
+<h2>C5 — §5.1 e nota da Tabela 4: o desvio de 138,44 tem causa geométrica identificada</h2>
+<p><strong>Onde:</strong> <code>main.tex:615</code> (nota) e <code>main.tex:619</code>. <strong>Hoje:</strong> exclui-se apenas <code>(brc000d, 50 pivôs)</code>; o texto atribui o desvio a "instabilidade do sorteio [...] <strong>e não necessariamente um efeito geométrico sistemático</strong>".</p>
+<p><strong>É exatamente um efeito geométrico sistemático, e previsível.</strong> <code>generatePivots</code> (<code>heuristics.cpp</code>) sorteia o <strong>primeiro</strong> pivô uniformemente entre as células transitáveis. Se ele cai num bolsão desconexo, <code>bfsPivo</code> devolve −1 fora do bolsão, o argmax de <code>minDists</code> fica preso lá, todos os pivôs ficam no bolsão e, para quase toda consulta, <code>dS == dG == -1</code> → **h ≡ 0 → o A\* degenera em Dijkstra**.</p>
+<p>Verificação (<code>medicoes/pivos_precomp.csv</code>): <strong>7 colapsos observados, 7 previstos, as mesmas 7 células.</strong> Em todas, o primeiro pivô caiu fora da maior componente e h ≡ 0 em 99,3% a 100% das consultas. Nenhum colapso em mapa 100% conexo.</p>
+<div class="tabela"><table><thead><tr><th>mapa</th><th>componentes</th><th>fora da maior</th><th>colapsos observados</th><th>esperado</th></tr></thead><tbody><tr><td>brc201d</td><td>167</td><td>17,9%</td><td>5 de 20</td><td>3,6</td></tr><tr><td>brc000d</td><td>2</td><td>5,4%</td><td>2 de 20</td><td>1,1</td></tr><tr><td>outros 15</td><td>1</td><td>0%</td><td>0</td><td>0</td></tr></tbody></table></div>
+<p><strong>A nota da Tabela 4 está incompleta:</strong> além de <code>(brc000d, 50)</code>, colapsaram <code>(brc201d, 10)</code> nas sementes 123 e 456 e <code>(brc201d, 50)</code> nas sementes 42, 456 e 789 — todas mantidas na agregação. São elas que produzem o desvio de 138,44.</p>
+<p><strong>Recomendação de código (trabalho futuro):</strong> sortear o primeiro pivô na maior componente conexa, ou reiniciar o sorteio se <code>max(minDists) == 0</code>. Correção de uma linha.</p>
+<hr>
+<h2>C6 — §3.4: a regularização não faz o que o texto afirma</h2>
+<p><strong>Onde:</strong> <code>main.tex:412</code> e <code>main.tex:429</code>. <strong>Hoje:</strong> "o fator 0,0005 aplica uma penalidade de regularização que <strong>favorece fórmulas mais compactas</strong>, prevenindo <em>overfitting</em>".</p>
+<p><strong>O comentário do próprio código diz o contrário</strong> (<code>GeneticAlgorithm.h:71</code>): <code>lambda = 0.0005; // Penalidade por tamanho baixíssima para permitir fórmulas complexas</code>.</p>
+<p><strong>Quantificação:</strong> λ·‖T‖ vale no máximo <strong>1,56%</strong> do fitness (mediana 0,52%). Para chegar a 10% do fitness, λ teria de ser <strong>19× maior</strong>. As ASTs campeãs têm mediana de <strong>39 nós</strong> e máximo de <strong>78</strong> (brc203d), com profundidade até 26. E <strong>Spearman(tamanho, fitness) = +0,487 (p = 0,047)</strong>: fórmulas maiores têm fitness <em>maior</em> — a seleção premia tamanho, não o contrário.</p>
+<div class="sugerida">"O termo 0,0005·‖T‖ é uma penalidade de regularização deliberadamente branda. Na prática ela representa no máximo 1,6% do valor de aptidão (mediana 0,5%) e não restringe o crescimento das expressões: as fórmulas campeãs têm mediana de 39 nós e chegam a 78, e o tamanho correlaciona-se <strong>positivamente</strong> com a aptidão (ρ = +0,49; p = 0,047). A contenção do <em>overfitting</em>, portanto, não é obtida por regularização neste experimento."</div>
+<hr>
+<h2>C7 — §5.2 e §6: custo de preparação — agora medido, e a comparação aponta para o outro lado</h2>
+<blockquote><p><strong>Este é o único item que corrige uma _conclusão_, não um número ou uma descrição.</strong> Ele muda a recomendação prática para desenvolvedores, que é a entrega de um trabalho de natureza aplicada — e é o que um parecerista da área de jogos verifica primeiro.</p></blockquote>
+<p><strong>Onde:</strong> <code>main.tex:656</code> ("este experimento [...] não instrumentou o tempo de pré-computação dos pivôs, de modo que essa comparação permanece qualitativa") e <code>main.tex:703</code> ("o custo de memória [...] não medido empiricamente neste experimento").</p>
+<p>Ambos os buracos foram fechados (<code>medicoes/pivos_precomp.csv</code>, <code>tabelas/a7_*.csv</code>):</p>
+<ul class='lista'><li><strong>Pré-computação dos pivôs:</strong> 12,0 ms (10 pivôs) a <strong>103,4 ms</strong> (100 pivôs), média entre mapas e sementes; máximo 207,7 ms.</li><li><strong>Síntese evolutiva:</strong> 4 s a 2.025 s. <strong>A síntese custa de 777× a 12.197× a pré-computação de 100 pivôs.</strong></li><li><strong>Memória:</strong> o texto caracteriza O(|P|·|S|), mas <code>bfsPivo</code> aloca <code>vector&lt;vector&lt;int&gt;&gt; dists(height, vector&lt;int&gt;(width, -1))</code> — a <strong>grade inteira</strong>, não só as células transitáveis. Real = |P|·altura·largura·4 B: <strong>4,1× o teórico</strong> (mediana; até 8,2× em mapas esparsos), chegando a <strong>109 MB num único mapa</strong> (den602d, 100 pivôs) e 835 MB para os 17 mapas contra 171 MB teóricos.</li></ul>
+<p><strong>A frase de <code>main.tex:656</code> precisa inverter.</strong> O texto conclui que o custo dos pivôs, pago a cada mapa carregado, "torna a heurística de memória mais custosa em cenários com [...] geração procedural de mapas". A estrutura do argumento está certa, mas a magnitude o derruba: carregar um mapa novo custa ~100 ms de BFS, enquanto sintetizar uma fórmula para um mapa novo custa até 34 minutos. <strong>Em geração procedural, a fórmula é a estratégia inviável, não a memória</strong> — o que a memória paga é armazenamento, não tempo.</p>
+<hr>
+<h2>C8 — §5.3: a média de 12,19% precisa da distribuição ao lado</h2>
+<p><strong>Onde:</strong> <code>main.tex:667</code>. <strong>Veredito: CONFIRMA os números, mas eles escondem o resultado.</strong> Reproduzido: ρ médio agrupado = 1,1226 (12,26%; o 12,19% do texto vem de incluir a duplicata de <code>arena</code>, cujos 650 pares têm ρ = 1). Por mapa: 11,18% [IC 95% BCa 8,49%–13,33%]. Máximo ρ = 4,1928 em <code>den012d</code> — <strong>confirma</strong> o 4,19.</p>
+<p>O que falta e é mais acionável para um desenvolvedor:</p>
+<div class="tabela"><table><thead><tr><th></th><th>fração das instâncias</th></tr></thead><tbody><tr><td>caminho ótimo (ρ = 1)</td><td><strong>18,48%</strong></td></tr><tr><td>ρ &gt; 1,05</td><td>62,97%</td></tr><tr><td>ρ &gt; 1,10</td><td><strong>44,94%</strong></td></tr><tr><td>ρ &gt; 1,50</td><td>1,58%</td></tr></tbody></table></div>
+<p><strong>Medianas por categoria:</strong> o texto diz 1,05 / 1,06 / 1,09 / 1,11 (arenas / áreas abertas / natureza / dungeons). Recalculado sem a duplicata: <strong>1,078 / 1,062 / 1,088 / 1,112</strong>. Só o valor das arenas muda de forma perceptível (1,05 → 1,08).</p>
+<p><strong>A hipótese do texto sobre contorno CONFIRMA-SE:</strong> a fração de caminhos ótimos cai de 97,2% (caminhos de 1–25 células) para 1,1% (acima de 400), com Spearman(comprimento, ρ) = <strong>+0,494</strong> (p &lt; 10⁻³⁰⁰, n = 116.005).</p>
+<hr>
+<h2>C9 — Falta declarar os descartes (E7)</h2>
+<p><strong>Onde:</strong> <code>main.tex:534</code> e §5.4 inteira. Hoje o texto não menciona que pares foram descartados.</p>
+<p><code>main.cpp:217-224</code> seleciona os pares pela conectividade <strong>no estado de 30%</strong> e usa esse conjunto nos três níveis. Sobre 116.050 pares:</p>
+<div class="tabela"><table><thead><tr><th>padrão</th><th>sobreviventes</th><th>taxa</th><th>caminho ótimo mediano</th><th>Manhattan (expansões médias)</th></tr></thead><tbody><tr><td>Linear</td><td>869</td><td><strong>0,75%</strong></td><td>5</td><td>10</td></tr><tr><td>Sparse</td><td>4.996</td><td>4,31%</td><td>44</td><td>396</td></tr><tr><td>Organic</td><td>5.444</td><td>4,69%</td><td>37</td><td>310</td></tr><tr><td>Radial</td><td>11.086</td><td>9,55%</td><td>70</td><td>1.877</td></tr><tr><td>Stochastic</td><td>12.448</td><td>10,73%</td><td>111</td><td>2.825</td></tr><tr><td><em>(todos os pares)</em></td><td><em>116.050</em></td><td><em>100%</em></td><td><em>328</em></td><td><em>7.515</em></td></tr></tbody></table></div>
+<p>A interseção dos cinco padrões tem <strong>71 instâncias</strong>. Os conjuntos não são aninhados.</p>
+<p><strong>Isto precisa entrar no texto como limitação declarada</strong>, com a ressalva de que a comparação <em>entre estratégias</em> permanece válida (é pareada dentro da mesma instância) e que a comparação <em>entre padrões</em> é a que fica comprometida.</p>
+<hr>
+<h2>C10 — §7: uma pergunta de trabalho futuro já está respondida</h2>
+<p><strong>Onde:</strong> <code>main.tex:709</code> — "investigar a correlação entre a complexidade da árvore sintática das fórmulas e a subotimalidade dos caminhos em <em>dungeons</em>".</p>
+<p><strong>Resposta: não há correlação.</strong> Spearman(tamanho da AST, subotimalidade média por mapa) = <strong>−0,014</strong> sobre os 17 mapas. O tamanho da AST correlaciona-se com o <em>speedup</em> (ρ = +0,53) e com a aptidão (ρ = +0,49), mas não com a qualidade do caminho. Remover o item da lista de trabalhos futuros e reportar o resultado.</p>
+<hr>
+<h2>C11 — §5.3: a explicação dada para o <code>arena</code> é factualmente falsa</h2>
+<p><strong>Onde:</strong> <code>main.tex:667</code>. <strong>Hoje:</strong> "a fórmula sintetizada converge para $(\Delta x)^2 + (\Delta y)^2$ [...] que nesse ambiente <strong>sem obstáculos internos nunca chega a superestimar o custo real</strong>."</p>
+<p><strong>Ela superestima quase sempre.</strong> Medindo h(s,g) contra a distância ótima d\<em>(s,g) do Dijkstra em todos os pares do cenário: no <code>arena</code> a fórmula viola admissibilidade em <strong>99,2%</strong> dos pares, com fator de superestimação <strong>mediano de 19×</strong>. É aritmética elementar — num grid 4-conectado sem obstáculos d\</em> = Δx + Δy, e Δx² + Δy² excede esse valor para qualquer distância acima de 2 (para Δx=3, Δy=4: h = 25 contra d\* = 7).</p>
+<p>E não é só o <code>arena</code>: <strong>os 17 mapas violam admissibilidade em mais de 99% dos pares</strong>, com superestimação mediana de 270× e máximo de 6.711×. O controle confirma o método — Manhattan viola em 0,0000% dos pares, como manda a construção.</p>
+<p><strong>O que explica de fato o ρ = 1,0 do <code>arena</code></strong> é outra coisa, e é mais interessante: a correlação entre violar admissibilidade e produzir caminho subótimo é <strong>nula</strong> (ρ de Spearman = −0,003; p = 0,99 sobre os 17 mapas). Uma heurística inflada mas monótona na distância faz o A\<em> se comportar como busca gulosa; num mapa sem obstáculos internos, o caminho guloso </em>é* o ótimo. A violação é condição necessária para a subotimalidade, não suficiente — o que a determina é a geometria, não a magnitude do erro da estimativa.</p>
+<div class="sugerida">"No <code>arena</code>, a fórmula converge para $(\Delta x)^2 + (\Delta y)^2$, que superestima o custo real em 99,2% dos pares (fator mediano de 19×) e ainda assim devolve o caminho ótimo em todas as instâncias: num ambiente sem obstáculos internos, a ordem de expansão induzida por uma estimativa inflada mas monótona na distância coincide com a do caminho ótimo. Medida sobre os 17 mapas, a violação de admissibilidade é praticamente universal (acima de 99% dos pares em todos eles, com superestimação mediana de 270×), mas não se correlaciona com a subotimalidade observada ($\rho = -0{,}003$); o que a determina é a geometria do mapa, não a magnitude do erro da heurística."</div>
+<p><strong>Isto liga a Seção 3 aos dados</strong>, que era o pedido de fortalecer o lado teórico: a caracterização formal diz que as fórmulas "não garantem admissibilidade"; a medição mostra que elas a violam essencialmente sempre, e que a consequência prática é desacoplada da violação.</p>
+<footer><div class="prose">
+<p>Números, tabelas e figuras que sustentam cada item estão no
+<span class="mono">RESUMO.md</span>; o que não foi computável, e por quê, em
+<span class="mono">LIMITACOES.md</span>. Ambos, mais as 33 tabelas e as figuras em vetor,
+já estão em <span class="mono">analise_estatistica/</span> dentro do repositório do
+relatório.</p>
+</div></footer>
+</div>

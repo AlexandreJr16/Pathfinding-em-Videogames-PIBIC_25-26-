@@ -1,0 +1,18 @@
+arena |S|=2054 comps=1 maior=2054 consultas=130
+arena2 |S|=24311 comps=1 maior=24311 consultas=910
+brc000d |S|=28963 comps=2 maior=27386 consultas=850
+brc100d |S|=31023 comps=1 maior=31023 consultas=1360
+brc101d |S|=29882 comps=1 maior=29882 consultas=1570
+brc201d |S|=25645 comps=167 maior=21066 consultas=2090
+brc202d |S|=43151 comps=1 maior=43151 consultas=2550
+brc203d |S|=20712 comps=1 maior=20712 consultas=1290
+den000d |S|=58085 comps=1 maior=58085 consultas=1310
+den005d |S|=17559 comps=1 maior=17559 consultas=1500
+den011d |S|=14506 comps=1 maior=14506 consultas=750
+den012d |S|=22682 comps=1 maior=22682 consultas=1180
+den500d |S|=30072 comps=1 maior=30072 consultas=1600
+den501d |S|=26453 comps=1 maior=26453 consultas=1170
+den602d |S|=34617 comps=1 maior=34617 consultas=2660
+hrt201n |S|=23652 comps=1 maior=23652 consultas=1180
+lak506d |S|=13894 comps=1 maior=13894 consultas=1110
+>>> pivos_precomp.csv pronto

@@ -1,0 +1,1 @@
+brc101d,1,80,100,1.07914e+06,"(* (abs (max (+ deltaY (sqrt deltaX)) deltaX)) (abs (+ (/ (+ 3.5 deltaY) (* (/ (sqrt 4.2) (sqr deltaY)) (+ (+ deltaY (sqrt (+ deltaY (sqrt (* deltaY (- 2.1 deltaX)))))) (sqrt (abs (max (+ deltaY (abs deltaY)) deltaX)))))) (sqr deltaX))))",8.40911,42,13

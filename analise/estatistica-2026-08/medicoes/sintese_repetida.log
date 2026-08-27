@@ -1,0 +1,7 @@
+OpenMP: Usando 12 threads.
+[run 1] arena fitness=1.13522 size=5 (4.20176 s)
+[run 1] arena2 fitness=4.72395 size=65 (111.847 s)
+[run 1] brc000d fitness=4.31044 size=48 (234.408 s)
+[run 1] brc100d fitness=2.79773 size=45 (1446.44 s)
+[run 1] brc101d fitness=8.40911 size=42 (1079.14 s)
+[run 1] brc201d fitness=2.42381 size=40 (954.339 s)
