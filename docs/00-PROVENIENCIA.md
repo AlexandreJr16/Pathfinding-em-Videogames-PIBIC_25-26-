@@ -140,12 +140,10 @@ Nada foi apagado de fato: o material descartado está em
 
 O trabalho é de **Alexandre Pereira de Souza Junior**.
 
-Durante a reorganização apurou-se que uma identidade de terceiro,
-`Yagnik <coderisaddicted@gmail.com>`, aparecia como autora do commit `38b64b9` — resultado de
-uma configuração de `git` que veio junto numa cópia de *dotfiles*. Aquele commit foi corrigido
-por `--amend` ainda em março (virou `029c4be`, com a autoria correta), mas o objeto original
-continuou pendurado no *reflog* das cópias locais do repositório.
+Durante a reorganização apurou-se que um commit de março de 2026 havia sido gravado com uma
+identidade de `git` de terceiro, trazida por engano numa cópia de *dotfiles*. O commit foi
+corrigido por `--amend` ainda na época, com a autoria correta, mas o objeto original continuou
+pendurado no *reflog* de cópias locais do repositório — nunca no histórico público.
 
-Situação após a reorganização: o histórico do Git foi reiniciado do zero, as cópias que
-continham o rastro foram removidas do repositório, e **nenhum objeto ou referência atribuída a
-terceiros permanece**. O histórico público anterior nunca conteve commits dessa identidade.
+Situação após a reorganização: o histórico do Git foi reiniciado do zero e **todo o histórico
+é atribuído a um único autor**, sem nenhum objeto ou referência remanescente a terceiros.
