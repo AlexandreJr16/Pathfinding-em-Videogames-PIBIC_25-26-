@@ -26,6 +26,14 @@ desta pasta) sintetizam e organizam o que está aqui; estes são a fonte.
 | `ANALISE_RETOMAR.md` | Manual de parada e retomada da re-síntese longa do A9. |
 | `auditoria.html`, `correcoes.html` | Os mesmos conteúdos em página navegável. |
 
+> **Sobre os links de arquivo.** Os documentos de junho/2026 (`AI_ORCHESTRATOR.md`,
+> `project_walkthrough.md`, `heuristica_full_context.md`) contêm links `file://` para caminhos
+> absolutos de uma pasta que não existe mais (`~/Documentos/heuristica/...`). Já estavam
+> quebrados antes desta reorganização, e foram mantidos assim porque estes arquivos são
+> preservados sem edição. Para achar o arquivo correspondente hoje, troque
+> `heuristicas/src/` por `codigo/run-referencia-2026-03/src/` e `heuristicas/WPerformance/`
+> por `analise/original-2026-03/`.
+
 > **Sobre as citações de linha.** Referências como `main.cpp:227` ou
 > `GeneticAlgorithm.cpp:19` são à **versão de março**, hoje em
 > `codigo/run-referencia-2026-03/src/`, copiada para lá sem edição — os números continuam
