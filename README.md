@@ -184,6 +184,8 @@ set -x HEURISTICAS_DADOS <pasta com os CSVs brutos>
 
 📄 **[Relatório final (PDF)](relatorio/RelatorioFinal_PIBIC_2025-2026_AlexandrePereiraSouzaJunior.pdf)**
 
+📝 **[Artigo aceito — WPerformance (CSBC 2026)](https://sol.sbc.org.br/index.php/wperformance/article/view/43174)**
+
 <details>
 <summary><b>English summary</b></summary>
 
